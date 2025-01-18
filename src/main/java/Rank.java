@@ -7,15 +7,14 @@ import java.util.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.cdimascio.dotenv.Dotenv;
 
 public class Rank {
     private static  final String POLYGON_API_ENV = "POLYGON_API_KEY";
     private static final String[] STOCK_SYMBOLS = {"AAPL", "META", "AMZN", "MSFT", "GOOGL"};
 
     public static void main(String[] args) {
-        Dotenv dotenv = Dotenv.load();
-        String API_KEY = dotenv.get(POLYGON_API_ENV);
+        String API_KEY = System.getenv(POLYGON_API_ENV);
+        System.out.println(API_KEY);
         List<Stock> stocks = new ArrayList<>();
         System.out.println("I will use this class to make my API call to get the get the data for the big 5 stocks");
         for (String symbol : STOCK_SYMBOLS) {
