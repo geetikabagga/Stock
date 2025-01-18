@@ -14,7 +14,6 @@ public class Rank {
 
     public static void main(String[] args) {
         String API_KEY = System.getenv(POLYGON_API_ENV);
-        System.out.println(API_KEY);
         List<Stock> stocks = new ArrayList<>();
         System.out.println("I will use this class to make my API call to get the get the data for the big 5 stocks");
         for (String symbol : STOCK_SYMBOLS) {
