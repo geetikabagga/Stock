@@ -39,7 +39,8 @@ public class Rank {
         try {
             RedditAuth authenticator = new RedditAuth();
             authenticator.generateAccessToken();
-            RedditPost redditPost = new RedditPost(authenticator, content);
+            RedditPost redditPost = new RedditPost(authenticator);
+            redditPost.postOnReddit(content);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

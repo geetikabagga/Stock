@@ -7,14 +7,14 @@ public class RedditPost {
     private String content;
     private RedditAuth authenticator;
 
-    RedditPost(RedditAuth authenticator, String content) throws IOException {
+    RedditPost(RedditAuth authenticator) throws IOException {
         this.authenticator = authenticator;
         this.ACCESS_TOKEN = authenticator.getAccessToken();
         this.content = content;
-        this.postOnReddit();
+//        this.postOnReddit();
     }
 
-    public void postOnReddit() throws IOException {
+    public void postOnReddit(String content) throws IOException {
         OkHttpClient client = new OkHttpClient();
 
         RequestBody body = new FormBody.Builder()
