@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -34,7 +35,14 @@ public class Rank {
         sortSocksBasedOnVolume(stocks);
         String content = generateStockPost(stocks);
         System.out.println(content);
-//        XPoster.postContent(content);
+
+        try {
+            RedditAuth authenticator = new RedditAuth();
+            authenticator.generateAccessToken();
+            RedditPost redditPost = new RedditPost(authenticator, content);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static String generateStockPost(List<Stock> stocks){

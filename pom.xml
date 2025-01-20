@@ -24,9 +24,9 @@
       <version>2.15.2</version>
     </dependency>
     <dependency>
-      <groupId>org.twitter4j</groupId>
-      <artifactId>twitter4j-core</artifactId>
-      <version>4.0.7</version>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+      <version>4.11.0</version>
     </dependency>
   </dependencies>
   <build>
